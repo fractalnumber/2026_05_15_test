@@ -125,6 +125,9 @@
   <ItemGroup>
     <ClCompile Include="2026_05_15_test.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="testheader.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
