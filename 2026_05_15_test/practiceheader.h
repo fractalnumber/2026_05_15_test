@@ -1,0 +1,515 @@
+#pragma once
+// printf("2026-05-18 실습 1\n\n");
+// 
+// printf("1. 값 바꾸기\n\n");
+// 
+// int abcd = 50;
+// int efgh = 20;
+// 
+// printf("abcd: %d\n", abcd);
+// printf("efgh: %d\n\n", efgh);
+// 
+// printf("변수 1개 새로 선언 후 임시저장\n\n");
+// 
+// int ijkl = 0;
+// 
+// ijkl = efgh;
+// efgh = abcd;
+// abcd = ijkl;
+// 
+// printf("abcd: %d\n", abcd);
+// printf("efgh: %d\n\n", efgh);
+// 
+// 
+// printf("2. 값 합치기\n\n");
+// 
+// abcd = 50;
+// efgh = 20;
+// 
+// ijkl = abcd + efgh;
+// printf("efgh: %d\n\n", ijkl);
+// 
+// printf("3. 가로세로 곱해서 넓이 출력하기\n\n");
+// 
+// // abcd 와 efgh 곱하면 1000임
+// ijkl = abcd * efgh;
+// printf("넓이: %dm²\n\n", ijkl);
+// 
+// 
+// printf("4. 나머지 출력하기\n\n");
+// 
+// printf("4-1 %연산자 사용\n\n");
+// abcd = 50;
+// efgh = 20;
+// 
+// ijkl = abcd % efgh;
+// 
+// printf("나머지는: %d\n\n", ijkl);
+// 
+// printf("4-2 %연산자 미사용\n\n");
+// 
+// ijkl = abcd / efgh;
+// 
+// printf("나머지는: %d\n\n", ijkl);
+// 
+// 
+// 
+// 
+// 
+// printf("2026-05-18 실습 2\n\n");
+// 
+// printf("1. 섭씨->화씨 \n\n");
+// int ctemp = 0;
+// int ktemp = 0;
+// 
+// printf("확인할 온도 입력 : ");
+// std::cin >> ctemp;
+// 
+// 
+// ktemp = ctemp * 9 / 5 + 32;
+// 
+// printf("섭씨 온도가 %d도 면 ", ctemp);
+// printf("화씨 온도가 %d도 이다 \n\n\n", ktemp);
+// 
+// 
+// printf("2. 시간 출력하기 \n\n");
+// 
+// int sectime = 0;
+// int mintime = 0;
+// int hourtime = 0;
+// 
+// printf("확인할 시간 입력 : ");
+// std::cin >> sectime;
+// 
+// printf("%d초 를 변환하면 \n", sectime);
+// 
+// mintime = sectime / 60 % 60;
+// hourtime = sectime / 3600;
+// sectime = sectime % 60;
+// 
+// printf("%d 시간 ", hourtime);
+// printf("%d 분 ", mintime);
+// printf("%d 초\n\n\n", sectime);
+// 
+// 
+// printf("3. 동전계산 \n\n");
+// 
+// int money = 0;
+// 
+// printf("금액 입력 : ");
+// std::cin >> money;
+// 
+// printf("%d원이 있을때 \n", money);
+// 
+// int money_500 = 0;
+// int money_100 = 0;
+// int money_50 = 0;
+// int money_10 = 0;
+// 
+// money_500 = money / 500;
+// money_100 = money % 500 / 100;
+// money_50 = money % 100 / 50;
+// money_10 = money % 50 / 10;
+// 
+// printf("필요한 동전의 갯수는 각각 ");
+// printf("500원 %d개, ", money_500);
+// printf("100원 %d개, ", money_100);
+// printf("50원 %d개, ", money_50);
+// printf("10원 %d개가 된다.\n\n\n", money_10);
+// 
+// 
+// printf("4. 자리수 분리 \n\n");
+// 
+// int placenumbers = 0;
+// int place3 = 0;
+// int place2 = 0;
+// int place1 = 0;
+// int placeplus = 0;
+// 
+// printf("확인할 자리수 입력(3자리 제한) : ");
+// std::cin >> placenumbers;
+// 
+// printf("%d 라는 수가 있을때\n\n", placenumbers);
+// 
+// place3 = placenumbers / 100;
+// place2 = (placenumbers - (place3 * 100)) / 10;
+// place1 = placenumbers - (place3 * 100) - (place2 * 10);
+// 
+// printf("각 자리의 수는 ");
+// printf("100자리 수는 %d, ", place3);
+// printf("10자리 수는 %d, ", place2);
+// printf("1자리 수는 %d\n", place1);
+// 
+// placeplus = place3 + place2 + place1;
+// printf("각 자리의 수의 합은 %d\n\n\n", placeplus);
+// 
+// 
+// printf("5. 파일용량 계산 \n\n");
+// 
+// int filesize = 0;
+// int filesizekb = 0;
+// int filesizeb = 0;
+// 
+// printf("확인할 파일용량 입력 : ");
+// std::cin >> filesize;
+// 
+// filesizekb = filesize * 1024;
+// filesizeb = filesizekb * 1024;
+// 
+// printf("파일 용량이 %d MB 일때\n", filesize);
+// printf("이 파일 의 KB환산 용량은 %d KB 이고 ", filesizekb);
+// printf("이 파일 의 Byte환산 용량은 %d Byte 이다 \n\n\n", filesizeb);
+// 
+// 
+// printf("6. 타일 필요한 개수 구하기 \n\n");
+// 
+// int horizontalsize = 0;
+// int verticalsize = 0;
+// int tiles = 0;
+// 
+// printf("가로길이 입력 : ");
+// std::cin >> horizontalsize;
+// printf("세로길이 입력 : ");
+// std::cin >> verticalsize;
+// 
+// printf("가로가 %d cm, 세로가 %d cm 인 방을 30cmx30cm 의 타일로 채우려면 \n", horizontalsize, verticalsize);
+// tiles = ((horizontalsize + 30 - 1) / 30) * ((verticalsize + 30 - 1) / 30);
+// printf("최소 %d 개의 타일이 필요하다\n\n\n\n\n\n\n\n", tiles);
+
+
+
+
+// printf("2026-05-19 실습 1\n\n");
+
+// int ABC = 43;
+// printf("이 변수의 크기는 %d\n\n\n", int(sizeof(ABC)));
+// 
+// 
+// printf("2026-05-18 실습 1\n\n");
+// 
+// 
+// printf("1. 반지름을 입력받아 원의 넓이 구하기\n\n");
+// printf("반지름을 입력 : ");
+// 
+// int circleradius = 0;
+// 
+// std::cin >> circleradius;
+// 
+// printf("이 원의 넓이는 %f\n\n", circleradius * circleradius * 3.141592f);
+// 
+// 
+// printf("2. 3개의 값의 평균값 구하기\n\n");
+// 
+// float value1 = 0.0f;
+// float value2 = 0.0f;
+// float value3 = 0.0f;
+// 
+// printf("1번째 : ");
+// std::cin >> value1;
+// 
+// printf("2번째 : ");
+// std::cin >> value2;
+// 
+// printf("3번째 : ");
+// std::cin >> value3;
+// 
+// printf("\n평균은 %.2f\n\n", (value1+value2+value3)/3);
+// 
+// 
+// printf("3. 정가와 할인율을 입력받아 할인가 구하기\n\n");
+// 
+// int normalprice = 0;
+// printf("이 제품의 원래 가격은 : ");
+// std::cin >> normalprice;
+// 
+// float dicountpercent = 0.0f;
+// printf("할인율은 : ");
+// std::cin >> dicountpercent;
+// 
+// int totalprice = 0;
+// totalprice = (normalprice * (100 - dicountpercent) / 100);
+// 
+// printf("\n할인가는 %d\n\n", totalprice);
+
+
+
+// printf("2026-05-19 간단실습 1\n\n");
+	// 
+	// printf("1. 양수 음수 0 판단");
+	// 
+	// int number1 = 0;
+	// int number2 = 0;
+	// 
+	// printf("\n\n수를 입력 : ");
+	// std::cin >> number1;
+	// 	
+	// if (number1 > 0)
+	// {
+	// 	printf("입력받은 수는 양수임");
+	// }
+	// else if (number1 == 0)	
+	// {
+	// 	printf("입력받은 수는 0임");
+	// }
+	// else
+	// {
+	// 	printf("입력받은 수는 음수임");
+	// }
+	// 
+	// //-------------------------------------------------------------------
+	// //-------------------------------------------------------------------
+	// 
+	// printf("\n\n2. 홀수 짝수 판단");
+	// 
+	// printf("\n\n수를 입력 : ");
+	// std::cin >> number1;
+	// 
+	// if (number1 % 2 == 0)
+	// {
+	// 	printf("입력받은 수는 짝수임");
+	// }
+	// 
+	// else
+	// {
+	// 	printf("입력받은 수는 홀수임");
+	// }
+	// 
+	// //-------------------------------------------------------------------
+	// //-------------------------------------------------------------------
+	// 
+	// printf("\n\n3. 두 수의 대소 비교");
+	// 
+	// printf("\n첫번째 수를 입력 : ");
+	// std::cin >> number1;
+	// 
+	// printf("\n\n두번째 수를 입력 : ");
+	// std::cin >> number2;
+	// 
+	// if (number1 > number2)
+	// {
+	// 	printf("처음 입력한 수가 나중에 입력한 수보다 큼");
+	// }
+	// else if (number1 < number2)
+	// 
+	// {
+	// 	printf("처음 입력한 수가 나중에 입력한 수보다 작음");
+	// }
+	// else
+	// {
+	// 	printf("처음 입력한 수가 나중에 입력한 수와 같음");
+	// }
+	// 
+	// //-------------------------------------------------------------------
+	// //-------------------------------------------------------------------
+	// 
+	// printf("\n\n\n2026-05-19 간단실습 2\n\n");
+	// 
+	// printf("1. 6세 이상, 120cm 이상일때 탑승가능, 그외 불가능 표시하기");
+	// 
+	// int age = 0;
+	// int height = 0;
+	// 
+	// printf("\n\n나이를 입력(살) : ");
+	// std::cin >> age;
+	// 
+	// printf("\n\n키를 입력(cm) : ");
+	// std::cin >> height;
+	// 
+	// if (age >= 6 && height >= 120)
+	// {
+	// 	printf("\n탑승가능");
+	// }
+	// 
+	// else
+	// {
+	// 	printf("탑승불가");
+	// }
+	// 
+	// printf("\n\n2. 점수를 입력하여 90점이상 A, 80점이상 B, 70점이상 C, 60점이상 D, 그외 불가능 표시");
+	// 
+	// int score = 0;
+	// 
+	// printf("\n점수 입력 : ");
+	// std::cin >> score;
+	// 
+	// if (score >= 90)
+	// {
+	// 	printf("\nA 학점");
+	// }
+	// else if (score >= 80)
+	// {
+	// 	printf("\nB 학점");
+	// }
+	// else if (score >= 70)
+	// {
+	// 	printf("\nC 학점");
+	// }
+	// else if (score >= 60)
+	// {
+	// 	printf("\nD 학점");
+	// }
+	// else
+	// {
+	// 	printf("\nF 학점");
+	// }
+	// 
+	// printf("\n\n3. 세 과목의 점수를 입력하여 평균 60점 이상이면 합격, 그외 불합격. 한과목이라도 40점 미만시 과락\n");
+	// 
+	// int score1 = 0;
+	// int score2 = 0;
+	// int score3 = 0;
+	// 
+	// printf("첫번째 과목점수 입력 : ");
+	// std::cin >> score1;
+	// printf("두번째 과목점수 입력 : ");
+	// std::cin >> score2;
+	// printf("세번째 과목점수 입력 : ");
+	// std::cin >> score3;
+	// 
+	// if ((score1 + score2 + score3) / 3 >= 60 && (score1 >= 40) && (score2 >= 40) && (score3 >= 40))
+	// {
+	// 	printf("\n합격\n\n\n\n\n");
+	// }
+	// else
+	// {
+	// 	printf("\n불합격\n\n\n\n\n");
+	// }
+
+
+
+	//  printf("\n\n\n2026-05-19 간단실습 3\n\n");
+	//  
+	//  
+	//  printf("\n\n1. 3개의 정수를 입력받아 최대값과 최소값 구하기\n\n");
+	//  
+	//  int num1 = 0;
+	//  int num2 = 0;
+	//  int num3 = 0;
+	//  
+	//  printf("첫번째 수 입력 : ");
+	//  std::cin >> num1;
+	//  printf("두번째 수 입력 : ");
+	//  std::cin >> num2;
+	//  printf("세번째 수 입력 : ");
+	//  std::cin >> num3;
+	//  
+	//  if (((num1 >= num2) && (num1 >= num3)))
+	//  {
+	//  	printf("\n최대값 : %d", num1);
+	//  }
+	//  else if (((num2 >= num1) && (num2 >= num3)))
+	//  {
+	//  	printf("\n최대값 : %d", num2);
+	//  }
+	//  else if (((num3 >= num1) && (num3 >= num2)))
+	//  {
+	//  	printf("\n최대값 : %d", num3);
+	//  }
+	//  else
+	//  {
+	//  	printf("오류");
+	//  }
+	//  
+	//  
+	//  
+	//  if (((num1 <= num2) && (num1 <= num3)))
+	//  {
+	//  	printf("\n최소값 : %d", num1);
+	//  }
+	//  else if (((num2 <= num1) && (num2 <= num3)))
+	//  {
+	//  	printf("\n최소값 : %d", num2);
+	//  }
+	//  else if (((num3 <= num1) && (num3 <= num2)))
+	//  {
+	//  	printf("\n최소값 : %d", num3);
+	//  }
+	//  else if ((num1 == num2) && (num1 == num3))
+	//  {
+	//  	printf("\n최소값 : %d", num1);
+	//  }
+	
+	
+	//  printf("\n\n2. 3개의 수를 입력받아 삼각형 만들 수 있는지 보기 (양의 정수만 가능)\n\n");
+	//  
+	//  int linenum1 = 0;
+	//  int linenum2 = 0;
+	//  int linenum3 = 0;
+	//  
+	//  printf("첫번째 수 입력 : ");
+	//  std::cin >> linenum1;
+	//  printf("두번째 수 입력 : ");
+	//  std::cin >> linenum2;
+	//  printf("세번째 수 입력 : ");
+	//  std::cin >> linenum3;
+	//  
+	//  if (!((linenum1 + linenum2) <= linenum3) && !((linenum2 + linenum3) <= linenum1) && !((linenum1 + linenum3) <= linenum2))
+	//  {
+	//  	printf("\n삼각형을 만들 수 있음");
+	//  }
+	//  else
+	//  {
+	//  	printf("\n삼각형을 만들 수 없음");
+	//  }
+	//  
+	//  printf("\n\n3. 계산기\n\n");
+	//  
+	//  float calnum1 = 0;
+	//  char caldirector = 0;
+	//  float calnum2 = 0;
+	//  float resultnum = 0;
+	//  
+	//  printf("첫번째 수 입력 : ");
+	//  std::cin >> calnum1;
+	//  printf("연산기호 입력 : ");
+	//  std::cin >> caldirector;
+	//  printf("두번째 수 입력 : ");
+	//  std::cin >> calnum2;
+	//  
+	//  if (caldirector == '+')
+	//  {
+	//  	resultnum = (calnum1 + calnum2);
+	//  	printf("\n\n%f", resultnum);
+	//  }
+	//  else if (caldirector == '-')
+	//  {
+	//  	resultnum = (calnum1 - calnum2);
+	//  	printf("\n\n%f", resultnum);
+	//  }
+	//  else if (caldirector == '*')
+	//  {
+	//  	resultnum = (calnum1 * calnum2);
+	//  	printf("\n\n%f", resultnum);
+	//  }
+	//  else if ((caldirector == '/') && !(calnum2 == 0))
+	//  {
+	//  	resultnum = (calnum1 / calnum2);
+	//  	printf("\n\n%f", resultnum);
+	//  }
+	//  else if ((caldirector == '/') && (calnum2 == 0))
+	//  {
+	//  	printf("\n\n0으로 나눌 수 없음");
+	//  }
+	//  else
+	//  {
+	//  	printf("\n\n오류");
+	//  }
+	//  
+	//  
+	//  printf("\n\n\n4. 윤년 출력하기\n\n");
+	//  
+	//	printf("윤년 계산\n\n");
+	//	int inputyear = 0;
+	//	
+	//	
+	//	printf("연도 입력 : ");
+	//	std::cin >> inputyear;
+	//	
+	//	if ((inputyear % 400 == 0) || (inputyear % 4 == 0) && !(inputyear % 100 == 0))
+	//	{
+	//		printf("\n윤년입니다");
+	//	}
+	//	else
+	//	{		
+	//		printf("\n윤년이 아닙니다");
+	//	}
