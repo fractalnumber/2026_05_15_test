@@ -124,10 +124,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="2026_05_15_test.cpp" />
+    <ClCompile Include="dicegame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practiceheader.h" />
     <ClInclude Include="testheader.h" />
+    <ClInclude Include="dicegame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -18,12 +18,18 @@
     <ClCompile Include="2026_05_15_test.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="dicegame.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="testheader.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="practiceheader.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="dicegame.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>

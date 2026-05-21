@@ -210,3 +210,79 @@
 // randomnumber = rand();
 // 
 // printf("%d", randomnumber);
+
+
+////	 2026.05.21 함수
+
+// 함수 (특정 기능을 실행하는 코드 묶음)
+
+// 선언부
+// 함수의 틀 부분 (이름 형식 값 등.) 헤더에 선언
+
+
+// 정의부
+// 함수 동작 부분 ( {} 사이에 코드 작성.) cpp에 작성
+
+// 구성요소
+// 1. 리턴 타입 - 함수 실행을 마치고 나서 돌려주는 결과값
+// 2. 함수 이름 - 함수 구분을 위해 붙이는 이름 (함수를 호출할 때 사용)
+// 3. 파라미터 - 함수 호출 시 전달하는 값 (매개변수나 인자 로도 부름 / 데이터 타입과 이름으로 구성 / 0개 이상~)
+// 4. 함수 바디 - 함수의 실제 실행 코드. 종료 시 return 사용.
+
+//  int add(int num1, int num2)
+//  {
+//  	int addresult = num1 + num2;
+//  	
+//  	return addresult;
+//  }
+//  
+//  int sub(int num1, int num2)
+//  {
+//  	int subresult = num1 - num2;
+//  	return subresult;
+//  }
+//  
+//  int mul(int num1, int num2)
+//  {
+//  	int mulresult = num1 * num2;
+//  	return mulresult;
+//  }
+//  
+//  int divide(int num1, int num2)
+//  {	
+//  	int divresult = 0;
+//  	
+//  	if (num2 != 0)
+//  	{
+//  		int divresult = num1 / num2;
+//  	}
+//  	return divresult;
+//  }
+//  
+//  void test()
+//  {
+//  	return;
+//  }
+
+// pragma once : 헤더 중복기입시 오동작 방지 용도로 들어가있음.
+
+// int add(int num1, int num2);
+// 
+// int sub(int num1, int num2);
+// 
+// int mul(int num1, int num2);
+// 
+// int divide(int num1, int num2);
+
+// void test(); // return 필요 없음 , 파라미터 값도 필요 없음. 함수 종료가 필요할 시는 return 사용.
+
+
+// template <typename T>  // 타입에 상관 없이 작성해야 할 때. 템플릿 작동내용은 헤더파일에 직접 작성
+// T add(T num1, T num2);
+// {
+// 		T result = num1 + num2;
+//		return result;
+// }
+
+// --------------------------------여기서부터 시작----------------------------------------
+
