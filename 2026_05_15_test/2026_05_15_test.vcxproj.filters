@@ -18,7 +18,7 @@
     <ClCompile Include="2026_05_15_test.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="dicegame.cpp">
+    <ClCompile Include="addheader.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="practiceheader.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="dicegame.h">
+    <ClInclude Include="addheader.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>

@@ -817,3 +817,230 @@
 // 	printf("\n컴퓨터의 소지금이 부족하여 게임을 종료합니다.\n");
 // }
 
+/*
+{
+	printf("1. 주사위 베팅\n\n\n");
+
+	srand(time(0));
+
+	//srand(static_cast<unsigned int>(time(NULL)));
+
+	int playervalue = 10000; // 내 금액
+	int comvalue = 10000; // 컴퓨터 금액
+
+	int playerrole1 = 0; // 내 주사위 처음 눈
+	int comrole1 = 0; // 컴퓨터 주사위 처음 눈
+	int playerrole2 = 0; // 내 주사위 두번째 눈
+	int comrole2 = 0; // 컴퓨터 주사위 두번째 눈
+
+	int betvalue = 0; // 베팅금액
+	int bets = 0; // 베팅하는쪽 (1: 플레이어, 2: 컴퓨터)
+	int round = 1; // 현재 라운드
+
+	// 주사위 굴리기
+
+	while ((playervalue > 0) && (comvalue > 0))
+	{
+		printf("------------------[라운드 %d]------------------", round);
+
+		playerrole1 = randdice();
+		comrole1 = randdice();
+
+		while ((playerrole1 == comrole1) || (playerrole2 == comrole2) || ((playerrole1 + playerrole2) == (comrole1 + comrole2)))  // 중복조건 제거
+		{
+			playerrole1 = randdice();
+			comrole1 = randdice();
+			playerrole2 = randdice();
+			comrole2 = randdice();
+		}
+
+		printf("\n첫번째 플레이어 주사위의 눈은 %d, 컴퓨터 주사위의 눈은 %d 입니다.\n\n", playerrole1, comrole1);
+
+		if (playerrole1 > comrole1)
+		{
+			printf("\n플레이어 주사위의 눈이 컴퓨터 주사위의 눈보다 크므로 컴퓨터가 베팅을 진행합니다.\n\n");
+			bets = 2;
+		}
+		else
+		{
+			printf("\n컴퓨터 주사위의 눈이 플레이어 주사위의 눈보다 크므로 플레이어가 베팅을 진행합니다.\n");
+			bets = 1;
+		}
+
+		// 베팅하기
+
+
+
+		if (bets == 1) // 플레이어가 진행
+		{
+
+			printf("베팅할 금액을 입력하세요 : (소지금 : %d)", playervalue);
+
+			betvalue = PlyBetValue();
+
+			while ((betvalue > playervalue) || (betvalue > comvalue))
+			{
+				printf("베팅금액이 어느 한 쪽의 소지금액보다 큽니다. 다시 입력해주세요.\n");
+
+				printf("플레이어의 소지금 : %d\n", playervalue);
+				printf("컴퓨터의 소지금 : %d\n", comvalue);
+
+				betvalue = PlyBetValue();
+
+			}
+
+			printf("플레이어가 %d 금액을 베팅하였습니다.\n", betvalue);
+
+			playervalue = playervalue - betvalue;
+			comvalue = comvalue - betvalue;
+
+		}
+		else if (bets == 2) // 컴퓨터가 진행
+		{
+			betvalue = MaxComBetValue(comvalue);
+
+			while ((betvalue > playervalue) || (betvalue > comvalue))
+			{
+				betvalue = MaxComBetValue(comvalue);
+			}
+
+			playervalue = playervalue - betvalue;
+			comvalue = comvalue - betvalue;
+
+			printf("컴퓨터가 %d 금액을 베팅하였습니다. (컴퓨터의 남은 소지금 : %d)\n\n", betvalue, comvalue);
+		}
+
+
+		// 두번째 주사위 굴리기 (처음에서 이미 돌림)
+
+		printf("두번째 플레이어 주사위의 눈은 %d, 컴퓨터 주사위의 눈은 %d 입니다.\n\n", playerrole2, comrole2);
+
+		// 첫번째와 두번째의 주사위의 합 비교
+
+		if ((playerrole1 + playerrole2) > (comrole1 + comrole2))
+		{
+			printf("플레이어 주사위 눈의 합은 %d, 컴퓨터 주사위 눈의 합은 %d 입니다\n", (playerrole1 + playerrole2), (comrole1 + comrole2));
+			printf("플레이어가 승리하였으므로 베팅 금액을 모두 가져갑니다.\n\n");
+
+			playervalue = playervalue + (betvalue * 2);
+		}
+		else if ((playerrole1 + playerrole2) < (comrole1 + comrole2))
+		{
+			printf("플레이어 주사위 눈의 합은 %d, 컴퓨터 주사위 눈의 합은 %d 입니다\n", (playerrole1 + playerrole2), (comrole1 + comrole2));
+			printf("컴퓨터가 승리하였으므로 컴퓨터가 베팅 금액을 모두 가져갑니다.\n\n");
+
+			comvalue = comvalue + (betvalue * 2);
+		}
+
+		round = (round + 1);
+	}
+
+	if (playervalue <= 0)
+	{
+		printf("플레이어의 소지금이 부족하여 게임을 종료합니다.\n");
+	}
+	else if (comvalue <= 0)
+	{
+		printf("컴퓨터의 소지금이 부족하여 게임을 종료합니다.\n");
+	}
+}
+*/
+
+//// 2026.05.22 간단실습 1
+
+/*
+srand(unsigned int(time(0)));
+
+
+printf("1. 배열 내부값 출력\n\n");
+
+int Numbers1[5] = { 1,3,5,7,9 };
+int Numbers2[3][5] = { {1,3,5,7,9},{11,13,15,17,19},{21,23,25,27,29} };
+
+
+for (int i = 0; i < (sizeof(Numbers1)/sizeof(int)); i++)
+{
+	printf("[%d] ", Numbers1[i]);
+}
+
+printf("\n\n");
+
+for (int e = 0; e < 3; e++)
+{
+	for (int f = 0; f < 5; f++)
+	{
+		printf("[%2d] ", Numbers2[e][f]);
+	}
+	printf("\n");
+}
+
+
+printf("\n\n2. 배열 내부값 더하기, 평균 구하기\n\n");
+
+
+int Numbers3[4] = { 5,7,2,18 };
+
+
+printf("배열 내부 값은 ");
+
+for (int g = 0; g < 4; g++)
+{
+	printf("[%d] ", Numbers3[g]);
+}
+
+printf("\n\n");
+
+int add = 0;
+float avg = 0;
+
+for (int g = 0; g < 4; g++)
+{
+	add += Numbers3[g];
+}
+
+printf("배열 내부 값들을 더하면 : %d\n", add);
+avg = add / (sizeof(Numbers3) / sizeof(int));
+printf("배열 내부 값들의 평균은 : %f\n", avg);
+
+
+
+
+printf("\n\n3. 배열 내부 최대값 최소값 구하기\n\n");
+
+int maxnum = INT32_MIN;
+int minnum = INT32_MAX;
+
+int Numbers4[5] = { 43,0,-32,5,79 };
+
+printf("배열 내부 값들은 ");
+
+for (int i = 0; i < (sizeof(Numbers4) / sizeof(int)); i++)
+{
+	printf("[%d] ", Numbers4[i]);
+}
+
+printf("\n\n");
+
+for (int k = 0; k < (sizeof(Numbers4) / sizeof(int)); k++)
+{
+	if (maxnum < Numbers4[k])
+	{
+		maxnum = Numbers4[k];
+	}
+}
+	printf("\n최대값 : %d", maxnum);
+
+printf("\n");
+
+for (int k = 0; k < (sizeof(Numbers4) / sizeof(int)); k++)
+{
+	if (minnum > Numbers4[k])
+	{
+		minnum = Numbers4[k];
+	}
+}
+printf("최소값 : %d", minnum);
+*/
+
+
+

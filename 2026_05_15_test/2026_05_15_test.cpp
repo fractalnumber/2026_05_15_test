@@ -6,137 +6,58 @@
 #include <iostream>
 #include <stdio.h>
 #include <time.h>
-#include "dicegame.h"
+#include "addheader.h"
 //#include <random>
 
 int main()
-
 {
-	printf("1. 주사위 베팅\n\n\n");
+	printf("1.6면체 주사위를 100만번 던져서 각 눈의 수가 몇번 나왔는지 카운팅하기(배열 활용하기)\n\n");
 
-	srand(time(0));
+	
+	const int dicemax = 6;									// 주사위 눈 수
+	int dicemaxroll = 1000000;								// 굴릴 횟수
+	int dicelist[dicemax] = {0,0,0,0,0,0};					// 결과값들
+		
+	diceRresult(dicelist,dicemaxroll);
 
-	//srand(static_cast<unsigned int>(time(NULL)));
+	printf("주사위 눈은 각각 1=[%d]번, 2=[%d]번, 3=[%d]번, 4=[%d]번, 5=[%d]번, 6=[%d]번 나왔습니다.\n\n", dicelist[0], dicelist[1], dicelist[2], dicelist [3] , dicelist[4], dicelist[5]);
 
-	int playervalue = 10000; // 내 금액
-	int comvalue = 10000; // 컴퓨터 금액
+	printf("\n\n");
 
-	int playerrole1 = 0; // 내 주사위 처음 눈
-	int comrole1 = 0; // 컴퓨터 주사위 처음 눈
-	int playerrole2 = 0; // 내 주사위 두번째 눈
-	int comrole2 = 0; // 컴퓨터 주사위 두번째 눈
+	printf("2.배열에 저장된 값을 거꾸로 뒤집는 함수 만들기(파라메터 : int* Array, int Size)\n\n");
 
-	int betvalue = 0; // 베팅금액
-	int bets = 0; // 베팅하는쪽 (1: 플레이어, 2: 컴퓨터)
-	int round = 1; // 현재 라운드
+	const int arraymax = 10;								// 배열 크기
+	int array[arraymax] = {11,2,3,4,5,6,7,8,9,22};			// 배열 요소들
 
-	// 주사위 굴리기
+	arrayinv(array, arraymax);
 
-	while ((playervalue > 0) && (comvalue > 0))
+	printf("\n\n");
+
+	printf("3.로또 번호 생성기(셔플알고리즘 활용하기)\n\n");
+
+	const int arraymax2 = 45;
+	int array2[arraymax2] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45 };
+
+	arraylotto(array2, arraymax2);
+
+	printf("4. 미로 탈출\n\n");
+
+	int array[10][20] =
 	{
-		printf("------------------[라운드 %d]------------------", round);
+		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		{2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3},
+		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+	};
 
-		playerrole1 = randdice();
-		comrole1 = randdice();
-
-		while ((playerrole1 == comrole1) || (playerrole2 == comrole2) || ((playerrole1 + playerrole2) == (comrole1 + comrole2)))  // 중복조건 제거
-		{
-			playerrole1 = randdice();
-			comrole1 = randdice();
-			playerrole2 = randdice();
-			comrole2 = randdice();
-		}
-
-		printf("\n첫번째 플레이어 주사위의 눈은 %d, 컴퓨터 주사위의 눈은 %d 입니다.\n\n", playerrole1, comrole1);
-
-		if (playerrole1 > comrole1)
-		{
-			printf("\n플레이어 주사위의 눈이 컴퓨터 주사위의 눈보다 크므로 컴퓨터가 베팅을 진행합니다.\n\n");
-			bets = 2;
-		}
-		else
-		{
-			printf("\n컴퓨터 주사위의 눈이 플레이어 주사위의 눈보다 크므로 플레이어가 베팅을 진행합니다.\n");
-			bets = 1;
-		}
-
-		// 베팅하기
-
-
-
-		if (bets == 1) // 플레이어가 진행
-		{
-			
-			printf("베팅할 금액을 입력하세요 : (소지금 : %d)", playervalue);
-
-			betvalue = PlyBetValue();
-			
-			while ((betvalue > playervalue) || (betvalue > comvalue))
-			{
-				printf("베팅금액이 어느 한 쪽의 소지금액보다 큽니다. 다시 입력해주세요.\n");
-
-				printf("플레이어의 소지금 : %d\n", playervalue);
-				printf("컴퓨터의 소지금 : %d\n", comvalue);
-
-				betvalue = PlyBetValue();
-
-			}
-
-			printf("플레이어가 %d 금액을 베팅하였습니다.\n", betvalue);
-
-			playervalue = playervalue - betvalue;
-			comvalue = comvalue - betvalue;
-			
-		}
-		else if (bets == 2) // 컴퓨터가 진행
-		{
-			betvalue = MaxComBetValue(comvalue);
-
-			while ((betvalue > playervalue) || (betvalue > comvalue))
-			{
-				betvalue = MaxComBetValue(comvalue);
-			}
-			
-			playervalue = playervalue - betvalue;
-			comvalue = comvalue - betvalue;
-
-			printf("컴퓨터가 %d 금액을 베팅하였습니다. (컴퓨터의 남은 소지금 : %d)\n\n", betvalue, comvalue);
-		}
-
-
-		// 두번째 주사위 굴리기 (처음에서 이미 돌림)
-
-		printf("두번째 플레이어 주사위의 눈은 %d, 컴퓨터 주사위의 눈은 %d 입니다.\n\n", playerrole2, comrole2);
-
-		// 첫번째와 두번째의 주사위의 합 비교
-
-		if ((playerrole1 + playerrole2) > (comrole1 + comrole2))
-		{
-			printf("플레이어 주사위 눈의 합은 %d, 컴퓨터 주사위 눈의 합은 %d 입니다\n", (playerrole1 + playerrole2), (comrole1 + comrole2));
-			printf("플레이어가 승리하였으므로 베팅 금액을 모두 가져갑니다.\n\n");
-
-			playervalue = playervalue + (betvalue * 2);
-		}
-		else if ((playerrole1 + playerrole2) < (comrole1 + comrole2))
-		{
-			printf("플레이어 주사위 눈의 합은 %d, 컴퓨터 주사위 눈의 합은 %d 입니다\n", (playerrole1 + playerrole2), (comrole1 + comrole2));
-			printf("컴퓨터가 승리하였으므로 컴퓨터가 베팅 금액을 모두 가져갑니다.\n\n");
-
-			comvalue = comvalue + (betvalue * 2);
-		}
-
-		round = (round + 1);
-	}
-
-	if (playervalue <= 0)
-	{
-		printf("플레이어의 소지금이 부족하여 게임을 종료합니다.\n");
-	}
-	else if (comvalue <= 0)
-	{
-		printf("컴퓨터의 소지금이 부족하여 게임을 종료합니다.\n");
-	}
 }
+
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
 // 프로그램 디버그: <F5> 키 또는 [디버그] > [디버깅 시작] 메뉴
