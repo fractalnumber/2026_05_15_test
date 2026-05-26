@@ -28,9 +28,17 @@ int main()
 		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 	};
 
+	int* p = (int*)Array;
 
+	for (int i = 0; i < mazeVsize * mazeHsize; i++)
+	{
+		printf("%d ", p[i]);
 
+		if ((i + 1) % mazeHsize == 0)
+			printf("\n");
+	}
 
+}
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
 // 프로그램 디버그: <F5> 키 또는 [디버그] > [디버깅 시작] 메뉴
