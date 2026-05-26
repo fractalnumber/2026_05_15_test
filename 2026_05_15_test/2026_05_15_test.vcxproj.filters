@@ -15,22 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2026_05_15_test.cpp">
+    <ClCompile Include="outsideworks.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="addheader.cpp">
+    <ClCompile Include="functions.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="testheader.h">
+    <ClInclude Include="functions.h">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp이론.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="practiceheader.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="addheader.h">
-      <Filter>소스 파일</Filter>
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
