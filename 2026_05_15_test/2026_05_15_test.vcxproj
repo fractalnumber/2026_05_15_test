@@ -24,6 +24,7 @@
     <ProjectGuid>{38def3db-53a3-4536-aca7-f8105b4b254b}</ProjectGuid>
     <RootNamespace>My20260515test</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>outsideworks</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
