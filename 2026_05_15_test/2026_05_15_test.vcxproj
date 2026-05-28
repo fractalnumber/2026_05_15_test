@@ -126,11 +126,13 @@
   <ItemGroup>
     <ClCompile Include="outsideworks.cpp" />
     <ClCompile Include="functions.cpp" />
+    <ClCompile Include="header_0528.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practiceheader.h" />
     <ClInclude Include="cpp이론.h" />
     <ClInclude Include="functions.h" />
+    <ClInclude Include="header_0528.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1135,3 +1135,47 @@ printf("최소값 : %d", minnum);
 	printf("\n\n");
 
 	*/
+
+
+
+
+
+
+
+	// 파일 열기
+
+	/*
+	const string FilePath = ".\\Data\\OutTest.txt";	// .은 현재 워킹 폴더(기본적으로 파일이 실행되는 곳)
+	std::ifstream InputFile(FilePath);	// 입력용 파일스트림 만들기
+	if (InputFile.is_open())
+	{
+		std::string FileTexts(
+			(std::istreambuf_iterator<char>(InputFile)),
+			std::istreambuf_iterator<char>()
+		);
+		printf("파일 내용 : \n\n%s\n", FileTexts.c_str());
+		InputFile.close();
+	}
+	else
+	{
+		// 파일이 없거나 다른 이유로 열리지 않았다.
+		printf("파일을 열 수 없습니다.\n");
+	}
+
+	// 파일 저장
+
+	const string OutputFilePath = ".\\Data\\OutTest.txt";
+	std::ofstream OutFile(OutputFilePath);	// 기존 파일 덮어쓰기
+	//std::ofstream OutFile(OutputFilePath, std::ios::app);	// 덧붙이기
+	if (OutFile.is_open())
+	{
+		OutFile << "Hello World\n";
+		OutFile << "안녕하세요2.\n";
+		OutFile.close();
+	}
+	else
+	{
+		printf("파일을 생성하는데 실패했습니다.");
+	}
+
+	*/
