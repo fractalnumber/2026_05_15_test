@@ -8,7 +8,7 @@
 #include <time.h>
 #include <fstream>
 #include <windows.h>
-#include "header_0528.h"
+#include "header_0529.h"
 
 using namespace std;
 
@@ -17,8 +17,8 @@ using namespace std;
 
 int main()
 {
-	
-	CMaze();
+
+	TestVarious();
 	
 }
 

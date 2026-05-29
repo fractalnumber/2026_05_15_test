@@ -124,11 +124,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="header_0529.cpp" />
     <ClCompile Include="outsideworks.cpp" />
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="header_0528.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="header_0529.h" />
     <ClInclude Include="practiceheader.h" />
     <ClInclude Include="cpp이론.h" />
     <ClInclude Include="functions.h" />

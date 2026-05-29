@@ -39,7 +39,7 @@ void CMaze()
 		{
 			for (int f = 0; f < mazeHsize; f++)
 			{
-				Array[(e * 20) + (f * 1)] = atoi((FileTexts.c_str() + 6 + (e * 40) + (f * 2)));
+				Array[(e * 20) + (f * 1)] = atoi((FileTexts.c_str() + 6/*가로세로길이값 이후*/ + (e * 40)/*세로길이보정*/ + (f * 2)/*가로길이보정*/));
 				
 				printf("%2d", Array[(e * 20) + (f * 1)]);
 			}
@@ -59,6 +59,7 @@ void CMaze()
 
 }
 
+/*
 
 int Homework05_Battle()
 {
@@ -206,4 +207,4 @@ int castmonster()
 }
 
 
-
+*/
