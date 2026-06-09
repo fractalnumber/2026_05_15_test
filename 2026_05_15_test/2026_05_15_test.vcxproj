@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClCompile Include="header_0529.cpp" />
     <ClCompile Include="header_0605.cpp" />
+    <ClCompile Include="header_0609.cpp" />
     <ClCompile Include="outsideworks.cpp" />
     <ClCompile Include="mazegame.cpp" />
     <ClCompile Include="header_0528.cpp" />
@@ -134,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="header_0529.h" />
     <ClInclude Include="header_0605.h" />
+    <ClInclude Include="header_0609.h" />
     <ClInclude Include="practiceheader.h" />
     <ClInclude Include="cpp이론.h" />
     <ClInclude Include="mazegame.h" />
