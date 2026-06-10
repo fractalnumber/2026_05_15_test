@@ -1,6 +1,7 @@
 #include <iostream>
 #include <conio.h>
 #include <vector>
+#include <stack>
 #include <windows.h>
 #include "header_0609.h"
 
@@ -88,5 +89,9 @@ void MainQueue()
 		}		
 	}
 
+}
+
+void MainStack()
+{
 }
 
