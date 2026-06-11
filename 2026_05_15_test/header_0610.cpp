@@ -25,6 +25,7 @@ float Calculator()
 	// Mathtype 3 = 곱하기 연산
 	// Mathtype 4 = 나누기 연산
 
+	
 
 	printf("\n연산 종류를 입력\n1.더하기\n2.빼기\n3.곱하기\n4.나누기 : ");
 	std::cin >> Mathtype;

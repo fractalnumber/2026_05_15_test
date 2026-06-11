@@ -13,6 +13,7 @@
 #include <stack>
 #include "header_0609.h"
 #include "header_0610.h"
+#include "header_0611.h"
 
 using namespace std;
 
@@ -30,8 +31,12 @@ int main()
 
 	// Calculator();
 
+	MinMax();
 	
-	
+	NoEqual();
 
+	NoEqualString();
+
+	CharCount();
 
 }
